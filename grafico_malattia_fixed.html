@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <title>Grafico Malattia</title>
+
+  <!-- Librerie necessarie -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="https://unpkg.com/htmlwidgets@1.5.4/htmlwidgets.js"></script>
+  <script src="https://unpkg.com/crosstalk@1.1.1/crosstalk.min.js"></script>
+</head>
+<body>
+  <h1 style="text-align:center;">Grafico Malattia</h1>
+  <div id="grafico-malattia" style="width: 90%; height: 600px; margin: auto;"></div>
+
+  <!-- Script per generare un grafico demo -->
+  <script>
+    var data = [{
+      x: ['2023-01', '2023-02', '2023-03', '2023-04'],
+      y: [5, 15, 25, 10],
+      type: 'scatter',
+      mode: 'lines+markers',
+      marker: {color: 'red'},
+      name: 'Malattia A'
+    }];
+
+    var layout = {
+      title: 'Andamento Malattia nel Tempo',
+      xaxis: { title: 'Mese' },
+      yaxis: { title: 'Incidenza (%)' }
+    };
+
+    Plotly.newPlot('grafico-malattia', data, layout);
+  </script>
+</body>
+</html>
